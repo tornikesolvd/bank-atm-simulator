@@ -1,5 +1,10 @@
 package com.solvd.bankatmsimulator;
 
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
+
 /**
  * Main application class for Bank ATM Simulator
  * 
@@ -9,8 +14,6 @@ package com.solvd.bankatmsimulator;
 public class BankATMApp {
     
     public static void main(String[] args) {
-        // Application entry point
-        System.out.println("Bank ATM Simulator - Starting...");
     }
-}
+    }
 
