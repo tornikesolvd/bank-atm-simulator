@@ -100,6 +100,14 @@ public class PaymentCard {
         CANCELLED
     }
 
+    public enum CardIssuer {
+        VISA,
+        MASTERCARD,
+        AMERICAN_EXPRESS,
+        DISCOVER,
+        UNKNOWN
+    }
+
     @Override
     public String toString() {
         return "PaymentCard{" +

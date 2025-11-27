@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 public class ATMBanknote {
 
     private Long id;
+    private Long atmId;
     private String currency;
     private BigDecimal denomination;
     private Integer quantity;
@@ -24,6 +25,14 @@ public class ATMBanknote {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getAtmId() {
+        return atmId;
+    }
+
+    public void setAtmId(Long atmId) {
+        this.atmId = atmId;
     }
 
     public String getCurrency() {
