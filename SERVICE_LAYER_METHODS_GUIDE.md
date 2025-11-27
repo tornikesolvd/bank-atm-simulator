@@ -42,13 +42,6 @@ if (personOpt.isPresent()) {
 } else {
     // Handle not found case
 }
-```
-
-**Common Pattern:**
-
-Person person = personRepo.findById(id)
-    .orElseThrow(() -> new EntityNotFoundException("Person not found with id: " + id));
-```
 
 ---
 
