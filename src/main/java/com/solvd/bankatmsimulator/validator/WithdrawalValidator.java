@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.Withdrawal;
+import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
 
 import java.math.BigDecimal;
 import java.util.Set;
