@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.Transaction;
+import com.solvd.bankatmsimulator.domain.entity.Transaction;
 import com.solvd.bankatmsimulator.persistence.ITransactionRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 

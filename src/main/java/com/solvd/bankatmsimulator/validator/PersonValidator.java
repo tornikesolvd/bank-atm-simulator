@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.Person;
+import com.solvd.bankatmsimulator.domain.entity.Person;
 
 import java.util.regex.Pattern;
 

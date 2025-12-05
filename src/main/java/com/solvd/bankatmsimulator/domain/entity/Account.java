@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain;
+package com.solvd.bankatmsimulator.domain.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

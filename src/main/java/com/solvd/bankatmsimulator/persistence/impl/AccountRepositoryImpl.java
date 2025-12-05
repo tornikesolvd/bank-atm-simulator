@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.Account;
+import com.solvd.bankatmsimulator.domain.entity.Account;
 import com.solvd.bankatmsimulator.persistence.IAccountRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 

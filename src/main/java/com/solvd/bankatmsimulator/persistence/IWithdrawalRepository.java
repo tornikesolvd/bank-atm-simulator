@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence;
 
-import com.solvd.bankatmsimulator.domain.Withdrawal;
+import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence;
 
-import com.solvd.bankatmsimulator.domain.Account;
+import com.solvd.bankatmsimulator.domain.entity.Account;
 
 import java.util.List;
 import java.util.Optional;

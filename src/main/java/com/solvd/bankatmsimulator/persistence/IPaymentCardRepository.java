@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence;
 
-import com.solvd.bankatmsimulator.domain.PaymentCard;
+import com.solvd.bankatmsimulator.domain.entity.PaymentCard;
 
 import java.util.List;
 import java.util.Optional;
