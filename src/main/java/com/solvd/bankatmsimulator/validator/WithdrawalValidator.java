@@ -16,10 +16,10 @@ public final class WithdrawalValidator {
     public static boolean isValid(Withdrawal withdrawal) {
         if (withdrawal == null) return false;
         return isValidAmount(withdrawal.getTotalAmount()) &&
-               isValidCurrency(withdrawal.getCurrency()) &&
-               isValidAccountId(withdrawal.getAccountId()) &&
-               isValidTransactionId(withdrawal.getTransactionId()) &&
-               isValidAtmId(withdrawal.getAtmId());
+                isValidCurrency(withdrawal.getCurrency()) &&
+                isValidAccountId(withdrawal.getAccountId()) &&
+                isValidTransactionId(withdrawal.getTransactionId()) &&
+                isValidAtmId(withdrawal.getAtmId());
     }
 
     public static boolean isValidAmount(BigDecimal amount) {

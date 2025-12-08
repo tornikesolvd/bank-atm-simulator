@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.Withdrawal;
-import com.solvd.bankatmsimulator.persistence.IWithdrawalRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
+import com.solvd.bankatmsimulator.persistence.IWithdrawalRepository;
 
 import javax.sql.DataSource;
 import java.sql.*;

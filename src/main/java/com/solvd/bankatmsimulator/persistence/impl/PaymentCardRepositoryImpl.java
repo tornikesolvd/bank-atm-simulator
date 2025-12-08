@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.PaymentCard;
-import com.solvd.bankatmsimulator.persistence.IPaymentCardRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
+import com.solvd.bankatmsimulator.persistence.IPaymentCardRepository;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -187,7 +187,7 @@ public class PaymentCardRepositoryImpl implements IPaymentCardRepository {
     @Override
     public List<PaymentCard> findByAccountId(Long accountId) {
         String sql = "SELECT pc.id, pc.card_number, pc.card_type, pc.status, pc.pin_hash, pc.expiry_date, pc.created_at, pc.updated_at " +
-                     "FROM payment_cards pc INNER JOIN account_cards ac ON pc.id = ac.card_id WHERE ac.account_id = ?";
+                "FROM payment_cards pc INNER JOIN account_cards ac ON pc.id = ac.card_id WHERE ac.account_id = ?";
         List<PaymentCard> cards = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {

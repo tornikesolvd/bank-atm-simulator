@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.ATMBanknote;
-import com.solvd.bankatmsimulator.persistence.IATMBanknoteRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
+import com.solvd.bankatmsimulator.persistence.IATMBanknoteRepository;
 
 import javax.sql.DataSource;
 import java.sql.*;

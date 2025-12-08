@@ -14,7 +14,7 @@ public class ATMBanknote {
     }
 
     public ATMBanknote(Long id, String currency) {
-        this.id=id;
+        this.id = id;
         this.currency = currency;
     }
 

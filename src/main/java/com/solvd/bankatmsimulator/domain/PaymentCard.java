@@ -87,6 +87,26 @@ public class PaymentCard {
         return status == CardStatus.ACTIVE && !isExpired();
     }
 
+    @Override
+    public String toString() {
+        return "PaymentCard{" +
+                "id=" + id +
+                ", cardNumber='" + maskCardNumber(cardNumber) + '\'' +
+                ", cardType=" + cardType +
+                ", status=" + status +
+                ", expiryDate=" + expiryDate +
+                ", created at=" + createdAt +
+                ", updated at=" + updatedAt +
+                '}';
+    }
+
+    private String maskCardNumber(String cardNumber) {
+        if (cardNumber == null || cardNumber.length() < 4) {
+            return "****";
+        }
+        return "****" + cardNumber.substring(cardNumber.length() - 4);
+    }
+
     public enum CardType {
         DEBIT,
         CREDIT,
@@ -106,26 +126,6 @@ public class PaymentCard {
         AMERICAN_EXPRESS,
         DISCOVER,
         UNKNOWN
-    }
-
-    @Override
-    public String toString() {
-        return "PaymentCard{" +
-                "id=" + id +
-                ", cardNumber='" + maskCardNumber(cardNumber) + '\'' +
-                ", cardType=" + cardType +
-                ", status=" + status +
-                ", expiryDate=" + expiryDate +
-                ", created at=" + createdAt +
-                ", updated at=" + updatedAt +
-                '}';
-    }
-
-    private String maskCardNumber(String cardNumber) {
-        if (cardNumber == null || cardNumber.length() < 4) {
-            return "****";
-        }
-        return "****" + cardNumber.substring(cardNumber.length() - 4);
     }
 }
 

@@ -12,7 +12,7 @@ public class DepositBanknote {
     public DepositBanknote() {
     }
 
-    public DepositBanknote(Long depositId,Integer quantity) {
+    public DepositBanknote(Long depositId, Integer quantity) {
         this.depositId = depositId;
         this.quantity = quantity;
     }

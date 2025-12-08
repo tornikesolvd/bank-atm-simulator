@@ -16,9 +16,9 @@ public final class DepositValidator {
     public static boolean isValid(Deposit deposit) {
         if (deposit == null) return false;
         return isValidAmount(deposit.getTotalAmount()) &&
-               isValidCurrency(deposit.getCurrency()) &&
-               isValidTransactionId(deposit.getTransactionId()) &&
-               isValidAtmId(deposit.getAtmId());
+                isValidCurrency(deposit.getCurrency()) &&
+                isValidTransactionId(deposit.getTransactionId()) &&
+                isValidAtmId(deposit.getAtmId());
     }
 
     public static boolean isValidAmount(BigDecimal amount) {

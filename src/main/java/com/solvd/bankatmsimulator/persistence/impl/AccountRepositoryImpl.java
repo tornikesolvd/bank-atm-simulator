@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.Account;
-import com.solvd.bankatmsimulator.persistence.IAccountRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
+import com.solvd.bankatmsimulator.persistence.IAccountRepository;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -50,7 +50,7 @@ public class AccountRepositoryImpl implements IAccountRepository {
                     throw new RuntimeException("Failed to rollback transaction", rollbackEx);
                 }
             }
-            String errorMsg = String.format("Failed to create account. SQL Error: %s (SQL State: %s, Error Code: %d)", 
+            String errorMsg = String.format("Failed to create account. SQL Error: %s (SQL State: %s, Error Code: %d)",
                     e.getMessage(), e.getSQLState(), e.getErrorCode());
             throw new RuntimeException(errorMsg, e);
         } finally {
@@ -202,7 +202,7 @@ public class AccountRepositoryImpl implements IAccountRepository {
     @Override
     public List<Account> findByPersonId(Long personId) {
         String sql = "SELECT a.id, a.account_number, a.balance, a.currency, a.created_at, a.updated_at " +
-                     "FROM accounts a INNER JOIN persons p ON a.id = p.account_id WHERE p.id = ?";
+                "FROM accounts a INNER JOIN persons p ON a.id = p.account_id WHERE p.id = ?";
         List<Account> accounts = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {

@@ -5,9 +5,9 @@ import com.solvd.bankatmsimulator.domain.Deposit;
 import java.util.List;
 
 public interface IDepositRepository extends IRepository<Deposit> {
-    
+
     List<Deposit> findByTransactionId(Long transactionId);
-    
+
     List<Deposit> findByAtmId(Long atmId);
 }
 

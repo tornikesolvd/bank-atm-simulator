@@ -17,7 +17,7 @@ public class Withdrawal {
     private BigDecimal totalAmount;
     private LocalDateTime processedAt;
     private List<WithdrawalBanknote> banknotes;
-    
+
     public Long getId() {
         return id;
     }

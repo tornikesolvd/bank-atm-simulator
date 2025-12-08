@@ -53,16 +53,16 @@ public class Deposit {
         return totalAmount;
     }
 
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
     public LocalDateTime getProcessedAt() {
         return processedAt;
     }
 
     public void setProcessedAt(LocalDateTime processedAt) {
         this.processedAt = processedAt;
-    }
-
-    public void setTotalAmount(BigDecimal totalAmount) {
-        this.totalAmount = totalAmount;
     }
 
     public List<DepositBanknote> getBanknotes() {
