@@ -118,5 +118,3 @@ Each domain has its own exception class (like `AccountException`, `TransactionEx
 
 ---
 
-So that's basically it! Domain classes hold data, repositories talk to the database, and services coordinate everything and enforce business rules. Pretty clean separation, and it makes the code easy to understand and maintain.
-
