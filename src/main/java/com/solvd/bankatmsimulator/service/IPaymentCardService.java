@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.PaymentCard;
+import com.solvd.bankatmsimulator.domain.PaymentCard;
 import java.util.List;
 
 public interface IPaymentCardService {

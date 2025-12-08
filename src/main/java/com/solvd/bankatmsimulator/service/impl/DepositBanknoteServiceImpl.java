@@ -1,7 +1,7 @@
 package com.solvd.bankatmsimulator.service.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.DepositBanknote;
-import com.solvd.bankatmsimulator.domain.exception.DepositBanknoteException;
+import com.solvd.bankatmsimulator.domain.DepositBanknote;
+import com.solvd.bankatmsimulator.exception.DepositBanknoteException;
 import com.solvd.bankatmsimulator.persistence.IDepositBanknoteRepository;
 import com.solvd.bankatmsimulator.persistence.impl.DepositBanknoteRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IDepositBanknoteService;

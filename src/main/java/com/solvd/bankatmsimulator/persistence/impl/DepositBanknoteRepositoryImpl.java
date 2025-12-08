@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.DepositBanknote;
+import com.solvd.bankatmsimulator.domain.DepositBanknote;
 import com.solvd.bankatmsimulator.persistence.IDepositBanknoteRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 

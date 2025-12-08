@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.ATM;
+import com.solvd.bankatmsimulator.domain.ATM;
 import java.util.List;
 
 public interface IATMService {

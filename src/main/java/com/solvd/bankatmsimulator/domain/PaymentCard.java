@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

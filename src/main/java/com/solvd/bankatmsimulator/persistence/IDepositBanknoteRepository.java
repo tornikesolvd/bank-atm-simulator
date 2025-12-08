@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence;
 
-import com.solvd.bankatmsimulator.domain.entity.DepositBanknote;
+import com.solvd.bankatmsimulator.domain.DepositBanknote;
 
 import java.util.List;
 

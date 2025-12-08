@@ -1,21 +1,20 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.math.BigDecimal;
 
-public class ATMBanknote {
+public class WithdrawalBanknote {
 
     private Long id;
-    private Long atmId;
-    private String currency;
+    private Long withdrawalId;
     private BigDecimal denomination;
     private Integer quantity;
 
-    public ATMBanknote() {
+    public WithdrawalBanknote() {
     }
 
-    public ATMBanknote(Long id, String currency) {
-        this.id=id;
-        this.currency = currency;
+    public WithdrawalBanknote(Long id, Integer quantity) {
+        this.id = id;
+        this.quantity = quantity;
     }
 
     public Long getId() {
@@ -26,20 +25,12 @@ public class ATMBanknote {
         this.id = id;
     }
 
-    public Long getAtmId() {
-        return atmId;
+    public Long getWithdrawalId() {
+        return withdrawalId;
     }
 
-    public void setAtmId(Long atmId) {
-        this.atmId = atmId;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public void setWithdrawalId(Long withdrawalId) {
+        this.withdrawalId = withdrawalId;
     }
 
     public BigDecimal getDenomination() {
@@ -60,9 +51,9 @@ public class ATMBanknote {
 
     @Override
     public String toString() {
-        return "ATMBanknote{" +
+        return "WithdrawalBanknote{" +
                 "id=" + id +
-                ", currency='" + currency + '\'' +
+                ", withdrawalId=" + withdrawalId +
                 ", denomination=" + denomination +
                 ", quantity=" + quantity +
                 '}';

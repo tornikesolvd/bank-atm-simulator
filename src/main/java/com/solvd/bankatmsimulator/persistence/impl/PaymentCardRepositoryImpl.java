@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.PaymentCard;
+import com.solvd.bankatmsimulator.domain.PaymentCard;
 import com.solvd.bankatmsimulator.persistence.IPaymentCardRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 

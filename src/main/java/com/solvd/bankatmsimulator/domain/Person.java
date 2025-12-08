@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 public class Person {
 

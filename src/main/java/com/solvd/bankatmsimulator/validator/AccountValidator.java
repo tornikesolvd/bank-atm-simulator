@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Account;
+import com.solvd.bankatmsimulator.domain.Account;
 
 import java.math.BigDecimal;
 import java.util.Set;

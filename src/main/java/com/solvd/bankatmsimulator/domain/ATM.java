@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.Deposit;
+import com.solvd.bankatmsimulator.domain.Deposit;
 import java.util.List;
 
 public interface IDepositService {

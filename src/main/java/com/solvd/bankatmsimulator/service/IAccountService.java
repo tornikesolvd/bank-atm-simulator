@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.Account;
+import com.solvd.bankatmsimulator.domain.Account;
 import java.util.List;
 
 public interface IAccountService {

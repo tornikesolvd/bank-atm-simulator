@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
+import com.solvd.bankatmsimulator.domain.Withdrawal;
 import com.solvd.bankatmsimulator.persistence.IWithdrawalRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 

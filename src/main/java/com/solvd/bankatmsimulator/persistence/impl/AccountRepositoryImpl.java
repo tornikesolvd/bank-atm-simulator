@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.Account;
+import com.solvd.bankatmsimulator.domain.Account;
 import com.solvd.bankatmsimulator.persistence.IAccountRepository;
 import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 
@@ -50,7 +50,9 @@ public class AccountRepositoryImpl implements IAccountRepository {
                     throw new RuntimeException("Failed to rollback transaction", rollbackEx);
                 }
             }
-            throw new RuntimeException("Failed to create account", e);
+            String errorMsg = String.format("Failed to create account. SQL Error: %s (SQL State: %s, Error Code: %d)", 
+                    e.getMessage(), e.getSQLState(), e.getErrorCode());
+            throw new RuntimeException(errorMsg, e);
         } finally {
             if (connection != null) {
                 try {

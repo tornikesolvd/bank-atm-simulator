@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
+import com.solvd.bankatmsimulator.domain.Withdrawal;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -24,8 +24,7 @@ public final class WithdrawalValidator {
 
     public static boolean isValidAmount(BigDecimal amount) {
         if (amount == null) return false;
-        return amount.compareTo(BigDecimal.ZERO) > 0 &&
-               amount.compareTo(Withdrawal.MAX_AMOUNT) <= 0;
+        return amount.compareTo(Withdrawal.MIN_AMOUNT) >= 0;
     }
 
     public static boolean isValidCurrency(String currency) {
