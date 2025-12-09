@@ -1,8 +1,5 @@
 # How Our Bank ATM Simulator Works
 
-Hey there! So you want to understand how this project is structured? Let me break it down for you in a way that makes
-sense.
-
 ## The Big Picture
 
 Think of our application like a restaurant. You have:
@@ -38,7 +35,7 @@ which banknotes were deposited.
 The domain classes also have some constants. Like `Withdrawal` has `MIN_AMOUNT` set to $5.00, meaning you can't withdraw
 less than five bucks. Makes sense, right?
 
-## Repository Classes - The Database Workers
+## Repository Classes
 
 Repositories are where we actually talk to the database. They're the ones writing SQL queries and handling all that JDBC
 stuff.
@@ -70,7 +67,7 @@ If something goes wrong, it rolls back and throws an exception with details abou
 The mapping part is important - databases return `ResultSet` objects with raw data, so we have methods like
 `mapResultSetToAccount()` that take that raw data and turn it into a nice Account object with all the right types.
 
-## Service Classes - The Business Logic Coordinators
+## Service Classes - The Business Logic
 
 Services are where the business rules live. They sit between the application code (like `BankATMApp`) and the
 repositories.

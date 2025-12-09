@@ -1,6 +1,7 @@
 package com.solvd.bankatmsimulator;
 
 import com.solvd.bankatmsimulator.domain.*;
+import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 import com.solvd.bankatmsimulator.service.*;
 import com.solvd.bankatmsimulator.service.impl.*;
 import org.slf4j.Logger;
@@ -16,9 +17,7 @@ import java.util.List;
 
 /**
  * Main application class for Bank ATM Simulator
- * <p>
  * This application simulates a banking system with accounts and transactions.
- * It ensures money conservation and atomic transaction processing.
  */
 public class BankATMApp {
 
@@ -62,12 +61,19 @@ public class BankATMApp {
             // Generate unique account numbers using timestamp to avoid duplicates
             long timestamp = System.currentTimeMillis();
 
+            // Track accounts created in this run (to display only these, not all from database)
+            List<Account> accountsCreatedThisRun = new ArrayList<>();
+
             log.info("Multiple Account Creation");
 
             Account account1 = createAccount("ACC-" + timestamp + "-001", new BigDecimal("500.00"), "USD");
+            accountsCreatedThisRun.add(account1);
             Account account2 = createAccount("ACC-" + timestamp + "-002", new BigDecimal("1000.00"), "USD");
+            accountsCreatedThisRun.add(account2);
             Account account3 = createAccount("ACC-" + timestamp + "-003", new BigDecimal("750.00"), "EUR");
+            accountsCreatedThisRun.add(account3);
             Account account4 = createAccount("ACC-" + timestamp + "-004", new BigDecimal("2000.00"), "USD");
+            accountsCreatedThisRun.add(account4);
 
             log.info("ATM Creation");
 
@@ -100,6 +106,7 @@ public class BankATMApp {
             log.info("Create -> Deposit -> Withdraw -> Check");
 
             Account account5 = createAccount("ACC-" + timestamp + "-005", new BigDecimal("1000.00"), "USD");
+            accountsCreatedThisRun.add(account5);
             BigDecimal initialBalance = account5.getBalance();
             log.info("Initial Balance: ${}", initialBalance);
 
@@ -119,7 +126,7 @@ public class BankATMApp {
             processTransfer(account1.getId(), account2.getId(), new BigDecimal("50.00"), "USD");
 
             // Large Deposit with Multiple Banknote Types
-            log.info("SCENARIO 9: Large Deposit with Multiple Banknote Types");
+            log.info("Large Deposit with Multiple Banknote Types");
 
             List<DepositBanknote> largeDepositBanknotes = new ArrayList<>();
             largeDepositBanknotes.add(createDepositBanknote(new BigDecimal("100.00"), 5)); // 5x $100 = $500
@@ -129,10 +136,10 @@ public class BankATMApp {
             processDeposit(account1.getId(), atm.getId(), new BigDecimal("1000.00"), "USD", largeDepositBanknotes);
 
 
-            // Log All Accounts Summary
-            log.info("Final Accounts Summary");
+            // Log Accounts Summary (only accounts created in this run)
+            log.info("Final Accounts Summary (Accounts Created This Run)");
 
-            displayAllAccountsSummary();
+            displayAccountsSummary(accountsCreatedThisRun);
 
         } catch (Exception e) {
             log.error("Error in scenarios: {}", e.getMessage(), e);
@@ -408,24 +415,34 @@ public class BankATMApp {
     }
 
     /**
-     * Info summary of all accounts
+     * Info summary of accounts (displays only accounts from the provided list)
      */
-    private static void displayAllAccountsSummary() {
+    private static void displayAccountsSummary(List<Account> accounts) {
         try {
-            List<Account> accounts = accountService.getAll();
-            log.info("\nTotal Accounts: {}", accounts.size());
+            if (accounts == null || accounts.isEmpty()) {
+                log.warn("No accounts to display");
+                return;
+            }
+
+            log.info("\nTotal Accounts (This Run): {}", accounts.size());
 
             BigDecimal totalBalanceUSD = BigDecimal.ZERO;
             BigDecimal totalBalanceEUR = BigDecimal.ZERO;
 
+            // Refresh account data from database to get latest balances after all transactions
             for (Account account : accounts) {
-                log.info("Account: {} | Balance: {} {} | ID: {}",
-                        account.getAccountNumber(), account.getBalance(), account.getCurrency(), account.getId());
+                try {
+                    Account refreshed = accountService.getById(account.getId());
+                    log.info("Account: {} | Balance: {} {} | ID: {}",
+                            refreshed.getAccountNumber(), refreshed.getBalance(), refreshed.getCurrency(), refreshed.getId());
 
-                if ("USD".equals(account.getCurrency())) {
-                    totalBalanceUSD = totalBalanceUSD.add(account.getBalance());
-                } else if ("EUR".equals(account.getCurrency())) {
-                    totalBalanceEUR = totalBalanceEUR.add(account.getBalance());
+                    if ("USD".equals(refreshed.getCurrency())) {
+                        totalBalanceUSD = totalBalanceUSD.add(refreshed.getBalance());
+                    } else if ("EUR".equals(refreshed.getCurrency())) {
+                        totalBalanceEUR = totalBalanceEUR.add(refreshed.getBalance());
+                    }
+                } catch (Exception e) {
+                    log.warn("Could not refresh account {}: {}", account.getId(), e.getMessage());
                 }
             }
 
@@ -433,7 +450,7 @@ public class BankATMApp {
             log.info("Total EUR Balance: €{}", totalBalanceEUR);
 
         } catch (Exception e) {
-            log.warn("Could not retrieve all accounts: {}", e.getMessage());
+            log.warn("Could not display accounts summary: {}", e.getMessage());
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.WithdrawalBanknote;
+import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 import com.solvd.bankatmsimulator.persistence.IWithdrawalBanknoteRepository;
 
 import javax.sql.DataSource;
