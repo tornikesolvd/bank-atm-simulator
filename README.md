@@ -23,7 +23,7 @@ src/main/java/com/solvd/bankatmsimulator/
 
 ## Team Members
 
-- Tornike Aladashvili (Team Lead)
+- Tornike Aladashvili
 - Kenan Iusubov
 - Saba Morchilashvili
 
