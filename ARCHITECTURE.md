@@ -1,13 +1,5 @@
 # How Our Bank ATM Simulator Works
 
-## The Big Picture
-
-Think of our application like a restaurant. You have:
-
-- **Domain classes** = The actual food (the real things we're working with)
-- **Repository classes** = The kitchen staff who handle storing and retrieving things
-- **Service classes** = The waiters who coordinate everything and make sure business rules are followed
-
 ## Domain Classes - The Real Stuff
 
 Domain classes are basically just Java objects that represent real-world things in our banking system. They're pretty
@@ -35,7 +27,7 @@ which banknotes were deposited.
 The domain classes also have some constants. Like `Withdrawal` has `MIN_AMOUNT` set to $5.00, meaning you can't withdraw
 less than five bucks. Makes sense, right?
 
-## Repository Classes
+## Repository Classes - The Database Workers
 
 Repositories are where we actually talk to the database. They're the ones writing SQL queries and handling all that JDBC
 stuff.
@@ -67,7 +59,7 @@ If something goes wrong, it rolls back and throws an exception with details abou
 The mapping part is important - databases return `ResultSet` objects with raw data, so we have methods like
 `mapResultSetToAccount()` that take that raw data and turn it into a nice Account object with all the right types.
 
-## Service Classes - The Business Logic
+## Service Classes - The Business Logic 
 
 Services are where the business rules live. They sit between the application code (like `BankATMApp`) and the
 repositories.
