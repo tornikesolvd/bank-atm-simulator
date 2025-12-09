@@ -1,7 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.PaymentCard;
-import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 import com.solvd.bankatmsimulator.persistence.IPaymentCardRepository;
 
 import javax.sql.DataSource;

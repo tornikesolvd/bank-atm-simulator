@@ -1,7 +1,6 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
 import com.solvd.bankatmsimulator.domain.Deposit;
-import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 import com.solvd.bankatmsimulator.persistence.IDepositRepository;
 
 import javax.sql.DataSource;

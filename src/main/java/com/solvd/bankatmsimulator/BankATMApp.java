@@ -1,7 +1,6 @@
 package com.solvd.bankatmsimulator;
 
 import com.solvd.bankatmsimulator.domain.*;
-import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 import com.solvd.bankatmsimulator.service.*;
 import com.solvd.bankatmsimulator.service.impl.*;
 import org.slf4j.Logger;
