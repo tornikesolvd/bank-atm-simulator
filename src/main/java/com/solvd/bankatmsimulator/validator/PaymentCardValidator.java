@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.PaymentCard;
+import com.solvd.bankatmsimulator.domain.PaymentCard;
 
-import static com.solvd.bankatmsimulator.domain.entity.PaymentCard.CardIssuer.*;
+import static com.solvd.bankatmsimulator.domain.PaymentCard.CardIssuer.*;
 
 public final class PaymentCardValidator {
 
@@ -62,4 +62,3 @@ public final class PaymentCardValidator {
         return UNKNOWN;
     }
 }
-

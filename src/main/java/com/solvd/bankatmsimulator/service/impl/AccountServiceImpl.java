@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.Account;
-import com.solvd.bankatmsimulator.domain.exception.AccountException;
+import com.solvd.bankatmsimulator.domain.Account;
+import com.solvd.bankatmsimulator.exception.AccountException;
 import com.solvd.bankatmsimulator.persistence.IAccountRepository;
 import com.solvd.bankatmsimulator.persistence.impl.AccountRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IAccountService;

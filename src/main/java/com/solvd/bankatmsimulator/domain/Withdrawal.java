@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Withdrawal {
 
-    public static final BigDecimal MAX_AMOUNT = new BigDecimal("5.00");
+    public static final BigDecimal MIN_AMOUNT = new BigDecimal("5.00");
 
     private Long id;
     private Long accountId;
@@ -17,7 +17,7 @@ public class Withdrawal {
     private BigDecimal totalAmount;
     private LocalDateTime processedAt;
     private List<WithdrawalBanknote> banknotes;
-    
+
     public Long getId() {
         return id;
     }

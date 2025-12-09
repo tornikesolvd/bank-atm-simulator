@@ -22,8 +22,7 @@ public final class Config {
         try {
             load();
         } catch (ConfigurationException e) {
-            log.error("Failed to load config.properties: {}", e.getMessage());
-            throw new RuntimeException("Failed to initialize database configuration", e);
+            log.error("Failed to load global properties: {}", e.getMessage());
         }
     }
 
@@ -34,18 +33,16 @@ public final class Config {
     private static void load() throws ConfigurationException {
         try (InputStream input = Config.class.getClassLoader().getResourceAsStream("config.properties")) {
             if (input == null)
-                throw new ConfigurationException("config.properties file not found in resources");
+                throw new ConfigurationException("global.properties file not found in resources");
             PROPS.load(input);
             URL = require("url");
             USERNAME = require("username");
             PASSWORD = require("password");
-            try {
-                POOL_SIZE = Integer.parseInt(require("poolSize"));
-            } catch (NumberFormatException e) {
-                throw new ConfigurationException("Invalid poolSize value in config.properties: must be a valid integer");
-            }
+            POOL_SIZE = Integer.parseInt(require("poolSize"));
         } catch (IOException e) {
-            throw new ConfigurationException("Failed to read config.properties: " + e.getMessage());
+            throw new ConfigurationException("Failed to read global.properties");
+        } catch (IllegalArgumentException e) {
+            throw new ConfigurationException("Invalid date format pattern in global.properties");
         }
     }
 
@@ -56,4 +53,3 @@ public final class Config {
         return value;
     }
 }
-

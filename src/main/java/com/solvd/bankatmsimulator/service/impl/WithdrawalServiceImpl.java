@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
-import com.solvd.bankatmsimulator.domain.exception.WithdrawalException;
+import com.solvd.bankatmsimulator.domain.Withdrawal;
+import com.solvd.bankatmsimulator.exception.WithdrawalException;
 import com.solvd.bankatmsimulator.persistence.IWithdrawalRepository;
 import com.solvd.bankatmsimulator.persistence.impl.WithdrawalRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IWithdrawalService;
@@ -135,7 +135,7 @@ public class WithdrawalServiceImpl implements IWithdrawalService {
         if (w.getTotalAmount() == null || w.getTotalAmount().compareTo(BigDecimal.ZERO) <= 0) {
             throw WithdrawalException.invalidAmount();
         }
-        if (w.getTotalAmount().compareTo(Withdrawal.MAX_AMOUNT) > 0) {
+        if (w.getTotalAmount().compareTo(Withdrawal.MIN_AMOUNT) < 0) {
             throw WithdrawalException.invalidAmount();
         }
         if (StringUtils.isNullOrEmpty(w.getCurrency())) {

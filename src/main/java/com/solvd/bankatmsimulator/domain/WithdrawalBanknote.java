@@ -1,19 +1,19 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.math.BigDecimal;
 
-public class DepositBanknote {
+public class WithdrawalBanknote {
 
     private Long id;
-    private Long depositId;
+    private Long withdrawalId;
     private BigDecimal denomination;
     private Integer quantity;
 
-    public DepositBanknote() {
+    public WithdrawalBanknote() {
     }
 
-    public DepositBanknote(Long depositId,Integer quantity) {
-        this.depositId = depositId;
+    public WithdrawalBanknote(Long id, Integer quantity) {
+        this.id = id;
         this.quantity = quantity;
     }
 
@@ -25,12 +25,12 @@ public class DepositBanknote {
         this.id = id;
     }
 
-    public Long getDepositId() {
-        return depositId;
+    public Long getWithdrawalId() {
+        return withdrawalId;
     }
 
-    public void setDepositId(Long depositId) {
-        this.depositId = depositId;
+    public void setWithdrawalId(Long withdrawalId) {
+        this.withdrawalId = withdrawalId;
     }
 
     public BigDecimal getDenomination() {
@@ -51,9 +51,9 @@ public class DepositBanknote {
 
     @Override
     public String toString() {
-        return "DepositBanknote{" +
+        return "WithdrawalBanknote{" +
                 "id=" + id +
-                ", depositId=" + depositId +
+                ", withdrawalId=" + withdrawalId +
                 ", denomination=" + denomination +
                 ", quantity=" + quantity +
                 '}';

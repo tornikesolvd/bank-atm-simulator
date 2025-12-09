@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Deposit;
+import com.solvd.bankatmsimulator.domain.Deposit;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -16,9 +16,9 @@ public final class DepositValidator {
     public static boolean isValid(Deposit deposit) {
         if (deposit == null) return false;
         return isValidAmount(deposit.getTotalAmount()) &&
-               isValidCurrency(deposit.getCurrency()) &&
-               isValidTransactionId(deposit.getTransactionId()) &&
-               isValidAtmId(deposit.getAtmId());
+                isValidCurrency(deposit.getCurrency()) &&
+                isValidTransactionId(deposit.getTransactionId()) &&
+                isValidAtmId(deposit.getAtmId());
     }
 
     public static boolean isValidAmount(BigDecimal amount) {
@@ -39,4 +39,3 @@ public final class DepositValidator {
         return atmId != null && atmId > 0;
     }
 }
-

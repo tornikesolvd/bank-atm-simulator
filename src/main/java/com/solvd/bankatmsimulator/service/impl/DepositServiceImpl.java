@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.Deposit;
-import com.solvd.bankatmsimulator.domain.exception.DepositException;
+import com.solvd.bankatmsimulator.domain.Deposit;
+import com.solvd.bankatmsimulator.exception.DepositException;
 import com.solvd.bankatmsimulator.persistence.IDepositRepository;
 import com.solvd.bankatmsimulator.persistence.impl.DepositRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IDepositService;

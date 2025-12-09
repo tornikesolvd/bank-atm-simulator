@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.PaymentCard;
-import com.solvd.bankatmsimulator.domain.exception.PaymentCardException;
+import com.solvd.bankatmsimulator.domain.PaymentCard;
+import com.solvd.bankatmsimulator.exception.PaymentCardException;
 import com.solvd.bankatmsimulator.persistence.IPaymentCardRepository;
 import com.solvd.bankatmsimulator.persistence.impl.PaymentCardRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IPaymentCardService;

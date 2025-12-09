@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.Transaction;
-import com.solvd.bankatmsimulator.domain.exception.TransactionException;
+import com.solvd.bankatmsimulator.domain.Transaction;
+import com.solvd.bankatmsimulator.exception.TransactionException;
 import com.solvd.bankatmsimulator.persistence.ITransactionRepository;
 import com.solvd.bankatmsimulator.persistence.impl.TransactionRepositoryImpl;
 import com.solvd.bankatmsimulator.service.ITransactionService;

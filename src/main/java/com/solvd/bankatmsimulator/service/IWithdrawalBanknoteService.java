@@ -1,6 +1,7 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.WithdrawalBanknote;
+import com.solvd.bankatmsimulator.domain.WithdrawalBanknote;
+
 import java.util.List;
 
 public interface IWithdrawalBanknoteService {

@@ -1,6 +1,7 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.Transaction;
+import com.solvd.bankatmsimulator.domain.Transaction;
+
 import java.util.List;
 
 public interface ITransactionService {

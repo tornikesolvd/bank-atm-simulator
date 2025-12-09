@@ -1,8 +1,8 @@
 package com.solvd.bankatmsimulator.service.impl;
 
 import com.mysql.cj.util.StringUtils;
-import com.solvd.bankatmsimulator.domain.entity.ATMBanknote;
-import com.solvd.bankatmsimulator.domain.exception.ATMBanknoteException;
+import com.solvd.bankatmsimulator.domain.ATMBanknote;
+import com.solvd.bankatmsimulator.exception.ATMBanknoteException;
 import com.solvd.bankatmsimulator.persistence.IATMBanknoteRepository;
 import com.solvd.bankatmsimulator.persistence.impl.ATMBanknoteRepositoryImpl;
 import com.solvd.bankatmsimulator.service.IATMBanknoteService;

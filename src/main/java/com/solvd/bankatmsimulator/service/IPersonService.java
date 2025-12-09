@@ -1,6 +1,7 @@
 package com.solvd.bankatmsimulator.service;
 
-import com.solvd.bankatmsimulator.domain.entity.Person;
+import com.solvd.bankatmsimulator.domain.Person;
+
 import java.util.List;
 
 public interface IPersonService {

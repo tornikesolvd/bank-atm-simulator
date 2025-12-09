@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Withdrawal;
+import com.solvd.bankatmsimulator.domain.Withdrawal;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -16,16 +16,16 @@ public final class WithdrawalValidator {
     public static boolean isValid(Withdrawal withdrawal) {
         if (withdrawal == null) return false;
         return isValidAmount(withdrawal.getTotalAmount()) &&
-               isValidCurrency(withdrawal.getCurrency()) &&
-               isValidAccountId(withdrawal.getAccountId()) &&
-               isValidTransactionId(withdrawal.getTransactionId()) &&
-               isValidAtmId(withdrawal.getAtmId());
+                isValidCurrency(withdrawal.getCurrency()) &&
+                isValidAccountId(withdrawal.getAccountId()) &&
+                isValidTransactionId(withdrawal.getTransactionId()) &&
+                isValidAtmId(withdrawal.getAtmId());
     }
 
     public static boolean isValidAmount(BigDecimal amount) {
         if (amount == null) return false;
         return amount.compareTo(BigDecimal.ZERO) > 0 &&
-               amount.compareTo(Withdrawal.MAX_AMOUNT) <= 0;
+                amount.compareTo(Withdrawal.MIN_AMOUNT) <= 0;
     }
 
     public static boolean isValidCurrency(String currency) {
@@ -45,4 +45,3 @@ public final class WithdrawalValidator {
         return atmId != null && atmId > 0;
     }
 }
-

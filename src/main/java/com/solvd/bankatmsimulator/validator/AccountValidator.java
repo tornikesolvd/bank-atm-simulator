@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Account;
+import com.solvd.bankatmsimulator.domain.Account;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -18,15 +18,15 @@ public final class AccountValidator {
     public static boolean isValid(Account account) {
         if (account == null) return false;
         return isValidAccountNumber(account.getAccountNumber()) &&
-               isValidBalance(account.getBalance()) &&
-               isValidCurrency(account.getCurrency());
+                isValidBalance(account.getBalance()) &&
+                isValidCurrency(account.getCurrency());
     }
 
     public static boolean isValidAccountNumber(String accountNumber) {
         if (accountNumber == null || accountNumber.trim().isEmpty()) return false;
         String trimmed = accountNumber.trim();
         return trimmed.length() == ACCOUNT_NUMBER_LENGTH &&
-               trimmed.matches("^\\d+$");
+                trimmed.matches("^\\d+$");
     }
 
     public static boolean isValidBalance(BigDecimal balance) {
@@ -39,4 +39,3 @@ public final class AccountValidator {
         return SUPPORTED_CURRENCIES.contains(currency.trim().toUpperCase());
     }
 }
-

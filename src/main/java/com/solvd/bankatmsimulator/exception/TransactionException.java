@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.exception;
+package com.solvd.bankatmsimulator.exception;
 
 public class TransactionException extends RuntimeException {
 

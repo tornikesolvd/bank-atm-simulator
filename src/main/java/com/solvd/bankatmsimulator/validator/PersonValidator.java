@@ -1,6 +1,6 @@
 package com.solvd.bankatmsimulator.validator;
 
-import com.solvd.bankatmsimulator.domain.entity.Person;
+import com.solvd.bankatmsimulator.domain.Person;
 
 import java.util.regex.Pattern;
 
@@ -24,16 +24,16 @@ public final class PersonValidator {
     public static boolean isValid(Person person) {
         if (person == null) return false;
         return isValidFullName(person.getFullName()) &&
-               isValidEmail(person.getEmail()) &&
-               isValidPhoneNumber(person.getPhoneNumber());
+                isValidEmail(person.getEmail()) &&
+                isValidPhoneNumber(person.getPhoneNumber());
     }
 
     public static boolean isValidFullName(String fullName) {
         if (fullName == null || fullName.trim().isEmpty()) return false;
         String trimmed = fullName.trim();
         return trimmed.length() >= MIN_NAME_LENGTH &&
-               trimmed.length() <= MAX_NAME_LENGTH &&
-               trimmed.matches("^[a-zA-Z\\s'-]+$");
+                trimmed.length() <= MAX_NAME_LENGTH &&
+                trimmed.matches("^[a-zA-Z\\s'-]+$");
     }
 
     public static boolean isValidEmail(String email) {
@@ -46,4 +46,3 @@ public final class PersonValidator {
         return PHONE_PATTERN.matcher(phoneNumber.trim()).matches();
     }
 }
-

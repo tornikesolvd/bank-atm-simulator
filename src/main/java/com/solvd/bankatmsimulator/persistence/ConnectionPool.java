@@ -42,4 +42,3 @@ public final class ConnectionPool {
             ds.close();
     }
 }
-

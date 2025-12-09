@@ -1,4 +1,4 @@
-package com.solvd.bankatmsimulator.domain.entity;
+package com.solvd.bankatmsimulator.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -78,14 +78,6 @@ public class Transaction {
         this.processedAt = processedAt;
     }
 
-    public enum TransactionType {
-        DEPOSIT, WITHDRAWAL, TRANSFER
-    }
-
-    public enum TransactionStatus {
-        PENDING, COMPLETED, FAILED, ROLLED_BACK
-    }
-
     @Override
     public String toString() {
         return "Transaction{" +
@@ -98,6 +90,14 @@ public class Transaction {
                 ", status=" + status +
                 ", processed at=" + processedAt +
                 '}';
+    }
+
+    public enum TransactionType {
+        DEPOSIT, WITHDRAWAL, TRANSFER
+    }
+
+    public enum TransactionStatus {
+        PENDING, COMPLETED, FAILED, ROLLED_BACK
     }
 }
 

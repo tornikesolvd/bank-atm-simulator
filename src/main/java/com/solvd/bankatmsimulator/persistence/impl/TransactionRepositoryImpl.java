@@ -1,8 +1,7 @@
 package com.solvd.bankatmsimulator.persistence.impl;
 
-import com.solvd.bankatmsimulator.domain.entity.Transaction;
+import com.solvd.bankatmsimulator.domain.Transaction;
 import com.solvd.bankatmsimulator.persistence.ITransactionRepository;
-import com.solvd.bankatmsimulator.persistence.ConnectionPool;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -167,7 +166,7 @@ public class TransactionRepositoryImpl implements ITransactionRepository {
     @Override
     public List<Transaction> findByAccountId(Long accountId) {
         String sql = "SELECT id, from_account_id, to_account_id, amount, currency, transaction_type, status, processed_at " +
-                     "FROM transactions WHERE from_account_id = ? OR to_account_id = ?";
+                "FROM transactions WHERE from_account_id = ? OR to_account_id = ?";
         List<Transaction> transactions = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
